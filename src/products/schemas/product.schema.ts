@@ -7,16 +7,16 @@ export type ProductDocument = HydratedDocument<Product>;
   collection: 'Product',
 })
 export class Product {
-  _id: string;
+  _id!: string;
 
   @Prop({ required: true })
-  name: string;
+  name!: string;
 
   @Prop()
-  description: string;
+  description!: string;
 
   @Prop()
-  price: number;
+  price!: number;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

@@ -5,12 +5,15 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ProductsModule } from './products/products.module';
 import { RedisModule } from './redis/redis.module';
 import { CacheInspectorModule } from './cache-inspector/cache-inspector.module';
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
     MongooseModule.forRoot('mongodb://localhost:27018', {
       user: 'root',

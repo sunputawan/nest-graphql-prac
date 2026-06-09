@@ -12,7 +12,7 @@ export class CreateProductInput {
   @Field()
   @IsString()
   @IsNotEmpty()
-  name: string;
+  name!: string;
 
   @Field()
   @IsString()
@@ -22,5 +22,5 @@ export class CreateProductInput {
   @Field(() => Float)
   @IsNumber()
   @Min(0)
-  price: number;
+  price!: number;
 }
