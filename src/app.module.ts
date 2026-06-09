@@ -10,12 +10,12 @@ import { CacheInspectorModule } from './cache-inspector/cache-inspector.module';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: true, 
+      autoSchemaFile: true,
     }),
     MongooseModule.forRoot('mongodb://localhost:27018', {
       user: 'root',
       pass: 'root',
-      dbName: 'graphQLCRUD'
+      dbName: 'graphQLCRUD',
     }),
     RedisModule,
     ProductsModule,

@@ -3,6 +3,6 @@ import { CacheInspectorService } from './cache-inspector.service';
 import { CacheInspectorResolver } from './cache-inspector.resolver';
 
 @Module({
-  providers: [CacheInspectorService, CacheInspectorResolver]
+  providers: [CacheInspectorService, CacheInspectorResolver],
 })
 export class CacheInspectorModule {}
