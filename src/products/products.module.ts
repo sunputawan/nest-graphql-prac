@@ -7,9 +7,13 @@ import { ProductResolver } from './products.resolver';
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: Product.name, schema: ProductSchema },
+      {
+        name: Product.name,
+        schema: ProductSchema,
+      },
     ]),
   ],
   providers: [ProductsService, ProductResolver],
+  exports: [],
 })
 export class ProductsModule {}

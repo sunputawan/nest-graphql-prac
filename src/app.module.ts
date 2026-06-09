@@ -3,6 +3,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProductsModule } from './products/products.module';
+import { RedisModule } from './redis/redis.module';
+import { CacheInspectorModule } from './cache-inspector/cache-inspector.module';
 
 @Module({
   imports: [
@@ -15,7 +17,9 @@ import { ProductsModule } from './products/products.module';
       pass: 'root',
       dbName: 'graphQLCRUD'
     }),
+    RedisModule,
     ProductsModule,
+    CacheInspectorModule,
   ],
 })
 export class AppModule {}
